@@ -4,106 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Success Sage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&display=swap" rel="stylesheet">
+    
     <style>
+        .chocolate-classical-sans-regular {
+        font-family: "Chocolate Classical Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        }
         body {
-            font-family: Arial, sans-serif;
+            
+            background-color: #f4f4f9;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        main {
+        .container {
+            background-color: #ffffff;
             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 90%;
             max-width: 800px;
-            margin: 40px auto;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #0056b3; /* Dark blue for a professional feel */
+            font-size: 32px; /* Larger font size for the main title */
+            margin-bottom: 10px; /* Space between the h1 and h2 */
+            text-align: center;
+        }
+        h2 {
+            color: darkolivegreen; /* Dark gray for secondary title */
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: left;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #4CAF50; /* Button color */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            margin-top: 20px; /* Additional spacing */
+            
+        }
+        .button:hover {
+            background-color: #367c39; /* Darker shade on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
         }
         footer {
-            background-color: #4CAF50;
+            background-color: #0056b3;
             color: white;
             text-align: center;
             padding: 10px 0;
             position: fixed;
             width: 100%;
             bottom: 0;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
         }
-        h1, h2 {
-            margin: 0 0 20px;
-        }
-        p, ul, ol {
-            margin: 0 0 20px;
-        }
-        ul, ol {
-            padding-left: 20px;
-        }
-        li {
-            margin: 5px 0;
-        }
-        strong {
-            color: #4CAF50;
-        }
-        a {
-            color: #4CAF50;
+        a, .button {
             text-decoration: none;
         }
-        a:hover {
+        a:hover, .button:hover {
             text-decoration: underline;
         }
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>End to End Machine Learning Project: Success Sage - A Student Exam Performance Indicator and Predictor</h1>
-    </header>
-    <main>
-        <h2>About This Project</h2>
-        <p>This project demonstrates a complete machine learning pipeline, from data ingestion to model training and evaluation. The pipeline is implemented in Python and uses various libraries such as scikit-learn, pandas, and XGBoost.</p>
+    <div class="container">
+        <h1>Welcome to Success Sage</h1>
+        <h2>Understanding Student Exam Performance</h2>
+        <p>Success Sage is a tool designed to predict how well students might perform on their exams based on various factors like their study habits, background, and school resources. Our goal is to help educators and parents gain insights into how these factors may affect academic success.</p>
 
-        <h2>Project Components</h2>
-        <ul>
-            <li>Data Ingestion: Reads raw data from CSV files, splits it into training and testing sets, and saves them for further processing.</li>
-            <li>Data Transformation: Applies preprocessing steps to the data, such as scaling numerical features.</li>
-            <li>Model Training: Trains multiple machine learning models using hyperparameter tuning and evaluates their performance.</li>
-        </ul>
+        <h2>How It Works</h2>
+        <p>Our system uses data from past student performances to learn about trends and patterns. We consider multiple aspects such as the level of parental education, the availability of resources like lunch options at school, and whether the student has completed any preparatory courses.</p>
 
-        <h2>Technologies Used</h2>
-        <ul>
-            <li>Python</li>
-            <li>pandas</li>
-            <li>scikit-learn</li>
-            <li>XGBoost</li>
-            <li>Pickle</li>
-        </ul>
+        <h2>Why It Matters</h2>
+        <p>Understanding these factors can help educators and parents provide better support to students. It also allows for a personalized approach to education, ensuring that every student has the best chance to succeed.</p>
 
-        <h2>How to Run the Project</h2>
-        <ol>
-            <li>Ensure you have Python and the necessary libraries installed.</li>
-            <li>Run the data ingestion script to load and split the data.</li>
-            <li>Run the data transformation script to preprocess the data.</li>
-            <li>Run the model trainer script to train and evaluate the models.</li>
-        </ol>
+        <h2>Get Started</h2>
+        <p>To see how Success Sage can help predict student performance, simply fill in some basic information about a student through our user-friendly form. The system will then provide insights based on our comprehensive data analysis.</p>
+        
 
-        <h2>Project Files</h2>
-        <ul>
-            <li><strong>data_ingestion.py</strong>: Handles the reading and splitting of data.</li>
-            <li><strong>data_transformation.py</strong>: Manages data preprocessing.</li>
-            <li><strong>model_trainer.py</strong>: Trains and evaluates machine learning models.</li>
-            <li><strong>utils.py</strong>: Contains utility functions for saving and loading models, as well as model evaluation.</li>
-            <li><strong>exception.py</strong>: Custom exception handling for better error management.</li>
-            <li><strong>logger.py</strong>: Configures logging for tracking the execution of the scripts.</li>
-        </ul>
+        <h2>Contact Us</h2>
+        <p>Have questions or need more information? Feel free to reach out to us at <a href="mailto:shubhamchandrawork@gmail.com">shubhamchandrawork@gmail.com</a>.</p>
 
-        <h2>Contact Information</h2>
-        <p>If you have any questions or need further information, please feel free to contact me at <a href="mailto:shubhamchandrawork@gmail.com">shubhamchandrawork@gmail.com</a>.</p>
-    </main>
+
+        <!-- Enhanced button for better visibility and attractiveness -->
+        <a href="/predictdata" class="button">Go to Prediction</a>
+    </div>
     <footer>
         &copy; 2024, Shubham Chandra. All rights reserved.
     </footer>
