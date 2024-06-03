@@ -1,120 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Sage</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&display=swap" rel="stylesheet">
-    
-    <style>
-        .chocolate-classical-sans-regular {
-        font-family: "Chocolate Classical Sans", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        }
-        body {
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Success Sage</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&display=swap" rel="stylesheet">
+        
+        <style>
+            .chocolate-classical-sans-regular {
+                font-family: "Chocolate Classical Sans", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+            body {
+                background-color: #f4f4f9;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start; /* Changed from center to flex-start */
+                height: 100vh;
+                font-family: "Chocolate Classical Sans", sans-serif;
+            }
+            .container {
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                width: 90%;
+                max-width: 800px;
+                text-align: center;
+                margin-top: 20px; /* Added to create space at the top */
+            }
+            h1 {
+                color: #0056b3;
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+            h2 {
+                color: darkolivegreen;
+                font-size: 20px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+            p, ul {
+                color: #666;
+                font-size: 16px;
+                line-height: 1.5;
+                margin-top: 0;
+                margin-bottom: 20px;
+                padding: 0;
+            }
+            ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            li {
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+            }
+            li a {
+                color: #0056b3;
+                text-decoration: none;
+                margin-left: 8px;
+                transition: color 0.3s;
+            }
+            li a:hover {
+                color: #4CAF50;
+            }
+            .contact-icon {
+                width: 20px;
+                height: 20px;
+            }
+            .button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 15px 30px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s, box-shadow 0.3s;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                display: inline-block;
+                margin-top: 20px;
+            }
+            .button:hover {
+                background-color: #367c39;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            }
+            footer {
+                background-color: #0056b3;
+                color: white;
+                text-align: center;
+                padding: 10px 0;
+                position: fixed;
+                width: 100%;
+                bottom: 0;
+            }
+            a, .button {
+                text-decoration: none;
+            }
+            a:hover, .button:hover {
+                text-decoration: underline;
+            }
+            .author-bio {
+                background-color: #f0f8ff;
+                padding: 25px;
+                border: 1px solid #d3d3d3;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+                border-radius: 12px;
+                margin-top: 20px;
+                text-align: left;
+                line-height: 1.6;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Welcome to Success Sage</h1>
+            <h2>Understanding Student Exam Performance</h2>
+            <p><b>Success Sage is an End to End Machine Learning Project</b> designed to predict how well students might perform on their exams based on various factors like their study habits, background, and school resources. Our goal is to help educators and parents gain insights into how these factors may affect academic success.</p>
+
+            <h2>How It Works</h2>
+            <p>Our system uses data from past student performances to learn about trends and patterns. We consider multiple aspects such as the level of parental education, the availability of resources like lunch options at school, and whether the student has completed any preparatory courses.</p>
+
+            <h2>Why It Matters</h2>
+            <p>Understanding these factors can help educators and parents provide better support to students. It also allows for a personalized approach to education, ensuring that every student has the best chance to succeed.</p>
+
+            <h2>Get Started</h2>
+            <p>To see how Success Sage can help predict student performance, simply fill in some basic information about a student through our user-friendly form. The system will then provide insights based on our comprehensive data analysis.</p>
             
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            width: 90%;
-            max-width: 800px;
-            text-align: center;
-        }
-        h1 {
-            color: #0056b3; /* Dark blue for a professional feel */
-            font-size: 32px; /* Larger font size for the main title */
-            margin-bottom: 10px; /* Space between the h1 and h2 */
-            text-align: center;
-        }
-        h2 {
-            color: darkolivegreen; /* Dark gray for secondary title */
-            font-size: 20px;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        p {
-            color: #666;
-            font-size: 16px;
-            line-height: 1.5;
-            text-align: left;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-        .button {
-            background-color: #4CAF50; /* Button color */
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            margin-top: 20px; /* Additional spacing */
-            
-        }
-        .button:hover {
-            background-color: #367c39; /* Darker shade on hover */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-        }
-        footer {
-            background-color: #0056b3;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        a, .button {
-            text-decoration: none;
-        }
-        a:hover, .button:hover {
-            text-decoration: underline;
-        }
+            <h2>Contact Us</h2>
+            <p>Have questions or need more information? Feel free to reach out to me:</p>
+            <ul>
+                <li>
+                    <img src="https://img.icons8.com/ios-filled/50/000000/email-open.png" alt="Email Icon" class="contact-icon">
+                    <a href="mailto:shubhamchandrawork@gmail.com">Shubham Chandra's Email</a>
+                </li>
+                <li>
+                    <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn Icon" class="contact-icon">
+                    <a href="https://www.linkedin.com/in/schandra235" target="_blank">Shubham Chandra's LinkedIn</a>
+                </li>
+            </ul>
 
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome to Success Sage</h1>
-        <h2>Understanding Student Exam Performance</h2>
-        <p>Success Sage is a tool designed to predict how well students might perform on their exams based on various factors like their study habits, background, and school resources. Our goal is to help educators and parents gain insights into how these factors may affect academic success.</p>
+            <a href="/predictdata" class="button">Go to Success Sage Tool</a>
 
-        <h2>How It Works</h2>
-        <p>Our system uses data from past student performances to learn about trends and patterns. We consider multiple aspects such as the level of parental education, the availability of resources like lunch options at school, and whether the student has completed any preparatory courses.</p>
+            <h2>About the Author</h2>
+            <div class="author-bio">
+                <p>Hi, I'm <strong>Shubham Chandra</strong>. Armed with a <em>Master's in Data Science</em> from the University at Buffalo, SUNY, and four fun-filled years as a Senior Data Analyst, I've mastered the art of juggling sensitive data while ensuring GDPR compliance. I'm passionate about using technology not just to enhance learning experiences but to transform them into something spectacular. Whether it's through advanced data science techniques or innovative educational strategies, I'm all about turning data into delightful discoveries and real-world solutions!</p>
+            </div>
 
-        <h2>Why It Matters</h2>
-        <p>Understanding these factors can help educators and parents provide better support to students. It also allows for a personalized approach to education, ensuring that every student has the best chance to succeed.</p>
-
-        <h2>Get Started</h2>
-        <p>To see how Success Sage can help predict student performance, simply fill in some basic information about a student through our user-friendly form. The system will then provide insights based on our comprehensive data analysis.</p>
+        </div>
         
 
-        <h2>Contact Us</h2>
-        <p>Have questions or need more information? Feel free to reach out to us at <a href="mailto:shubhamchandrawork@gmail.com">shubhamchandrawork@gmail.com</a>.</p>
+        
 
+    </body>
 
-        <!-- Enhanced button for better visibility and attractiveness -->
-        <a href="/predictdata" class="button">Go to Prediction</a>
-    </div>
     <footer>
-        &copy; 2024, Shubham Chandra. All rights reserved.
+        &copy; <span id="current-year"></span>, Shubham Chandra. All rights reserved.
     </footer>
-</body>
+    
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
 </html>

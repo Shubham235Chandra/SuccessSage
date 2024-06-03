@@ -1,149 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Sage - Student Exam Performance Indicator</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&display=swap" rel="stylesheet">
-    
-    <style>
-        .chocolate-classical-sans-regular {
-        font-family: "Chocolate Classical Sans", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        }
-        body {
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .login {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            width: 90%;
-            max-width: 600px;
-        }
-        legend {
-            color: #333;
-        }
-        h1 {
-            color: #0056b3; /* Dark blue for a professional feel */
-            font-size: 32px; /* Larger font size for the main title */
-            margin-bottom: 10px; /* Space between the h1 and h2 */
-            text-align: center;
-        }
-        h2 {
-            color: darkolivegreen; /* Dark gray for secondary title */
-            font-size: 24px; /* Substantial but smaller than the main title */
-            margin-bottom: 20px; /* More space below the sub-heading */
-            text-align: center;
-        }
-        label {
-            color: #666;
-            font-weight: bold;
-        }
-        .form-control {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-        }
-        .btn-primary {
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 4px;
-            width: 100%;
-            font-size: 16px;
-        }
-        .btn-primary:hover {
-            background-color: #004494;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Success Sage - Student Exam Performance Indicator</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&display=swap" rel="stylesheet">
+        
+        <style>
+            .chocolate-classical-sans-regular {
+            font-family: "Chocolate Classical Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            }
+            
+            body {
+                background-color: #f4f4f9;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .login {
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                width: 90%;
+                max-width: 600px;
+            }
+            legend {
+                color: #333;
+            }
+            h1 {
+                color: #0056b3; /* Dark blue for a professional feel */
+                font-size: 32px; /* Larger font size for the main title */
+                margin-bottom: 10px; /* Space between the h1 and h2 */
+                text-align: center;
+            }
+            h2 {
+                color: darkolivegreen; /* Dark gray for secondary title */
+                font-size: 24px; /* Substantial but smaller than the main title */
+                margin-bottom: 20px; /* More space below the sub-heading */
+                text-align: center;
+            }
+            label {
+                color: #666;
+                font-weight: bold;
+            }
+            .form-control {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                margin-bottom: 20px;
+                border-radius: 4px;
+                border: 1px solid #ddd;
+            }
+            .btn-primary {
+                background-color: #0056b3;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                border-radius: 4px;
+                width: 100%;
+                font-size: 16px;
+            }
+            .btn-primary:hover {
+                background-color: #004494;
+            }
 
-    </style>
-</head>
-<body>
-    <div class="login">
-        <h1>Success Sage</h1>
-        <h2>Student Exam Performance Prediction</h2>
-        <form action="{{ url_for('predict_datapoint')}}" method="post">
-            <div class="mb-3">
-                <label class="form-label">Gender</label>
-                <select class="form-control" name="gender" required>
-                    <option selected disabled value="">Select your Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Race or Ethnicity</label>
-                <select class="form-control" name="ethnicity" required>
-                    <option selected disabled value="">Select Ethnicity</option>
-                    <option value="group A">Group A</option>
-                    <option value="group B">Group B</option>
-                    <option value="group C">Group C</option>
-                    <option value="group D">Group D</option>
-                    <option value="group E">Group E</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Parental Level of Education</label>
-                <select class="form-control" name="parental_level_of_education" required>
-                    <option selected disabled value="">Select Parent Education</option>
-                    
-                    <option value="some high school">Some High School</option>
-                    <option value="high school">Finshed High School</option>
-                    <option value="some college">Some College</option>
-                    <option value="associate's degree">Associate's Degree</option>
-                    <option value="bachelor's degree">Bachelor's Degree</option>
-                    <option value="master's degree">Master's Degree</option>
-                    
-                    
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Lunch Type</label>
-                <select class="form-control" name="lunch" required>
-                    <option selected disabled value="">Select Lunch Type</option>
-                    <option value="free/reduced">Free or Reduced Lunch</option>
-                    <option value="standard">Standard Lunch</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Test preparation Course</label>
-                <select class="form-control" name="test_preparation_course" required>
-                    <option selected disabled value="">Select Test Prepration</option>
-                    <option value="none">No Test Prepration</option>
-                    <option value="completed">Completed Test Prepration</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Writing Score (out of 100)</label>
-                <input class="form-control" type="number" name="writing_score" min='0' max='100' required />
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Reading Score (out of 100)</label>
-                <input class="form-control" type="number" name="reading_score" min='0' max='100' required />
-            </div>
-            <div class="mb-3">
-                <input class="btn btn-primary" type="submit" value="Predict your Maths Score" />
-            </div>
-        </form>
-        {% if results %}
-        <h2>The prediction is: {{ results }}</h2>
-        {% endif %}
-    </div>
-</body>
+            footer {
+                background-color: #0056b3;
+                color: white;
+                text-align: center;
+                padding: 10px 0;
+                position: fixed;
+                width: 100%;
+                bottom: 0;
+            }
+
+        </style>
+    </head>
+    
+    <body>
+        <div class="login">
+            <h1>Success Sage</h1>
+            <h2>Student Exam Performance Prediction</h2>
+            <form action="{{ url_for('predict_datapoint')}}" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Gender</label>
+                    <select class="form-control" name="gender" required>
+                        <option selected disabled value="">Select your Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Race or Ethnicity</label>
+                    <select class="form-control" name="ethnicity" required>
+                        <option selected disabled value="">Select Ethnicity</option>
+                        <option value="group A">Group A</option>
+                        <option value="group B">Group B</option>
+                        <option value="group C">Group C</option>
+                        <option value="group D">Group D</option>
+                        <option value="group E">Group E</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Parental Level of Education</label>
+                    <select class="form-control" name="parental_level_of_education" required>
+                        <option selected disabled value="">Select Parent Education</option>
+                        
+                        <option value="some high school">Some High School</option>
+                        <option value="high school">Finshed High School</option>
+                        <option value="some college">Some College</option>
+                        <option value="associate's degree">Associate's Degree</option>
+                        <option value="bachelor's degree">Bachelor's Degree</option>
+                        <option value="master's degree">Master's Degree</option>
+                        
+                        
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Lunch Type</label>
+                    <select class="form-control" name="lunch" required>
+                        <option selected disabled value="">Select Lunch Type</option>
+                        <option value="free/reduced">Free or Reduced Lunch</option>
+                        <option value="standard">Standard Lunch</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Test preparation Course</label>
+                    <select class="form-control" name="test_preparation_course" required>
+                        <option selected disabled value="">Select Test Prepration</option>
+                        <option value="none">No Test Prepration</option>
+                        <option value="completed">Completed Test Prepration</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Writing Score (out of 100)</label>
+                    <input class="form-control" type="number" name="writing_score" min='0' max='100' required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Reading Score (out of 100)</label>
+                    <input class="form-control" type="number" name="reading_score" min='0' max='100' required />
+                </div>
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Predict your Maths Score" />
+                </div>
+            </form>
+            {% if results %}
+            <h2>The Prediction is: {{ results }}</h2>
+            {% endif %}
+        </div>
+
+    </body>
+    
+    <footer>
+        &copy; <span id="current-year"></span>, Shubham Chandra. All rights reserved.
+    </footer>
+    
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+
 </html>
